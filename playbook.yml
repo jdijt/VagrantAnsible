@@ -1,0 +1,16 @@
+---
+- hosts: all
+  tasks:
+    - name: Update all packages
+      become: true
+      apt:
+        upgrade: dist
+        update_cache: yes
+
+    - name: update cache and install vim
+      become: true
+      apt:
+        name: vim
+        state: latest
+        update_cache: yes
+
